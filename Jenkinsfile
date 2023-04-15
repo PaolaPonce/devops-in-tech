@@ -1,5 +1,11 @@
 pipeline {
     agent any
+    environment{
+        DOCKER_HUB_LOGIN = credentials('docker-hub')
+        REGISTRY = "roxsross12"
+        VERSION = "1.0.0"
+        IMAGE = "prueba-jenkins"
+    }
     stages {
         stage('init') {
             agent{
@@ -28,13 +34,17 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'listar'
-                sh 'docker build -t prueba-jenkins:1.0.0 .'
+                sh 'docker build -t $IMAGE:$VERSION .'
                 sh 'docker images'
             }
         }
         stage('deploy') {
             steps {
-                echo 'Hello World'
+                echo 'login'
+                sh 'docker login --username=$DOCKER_HUB_LOGIN_USR --password=$DOCKER_HUB_LOGIN_PSW'
+                sh 'docker tag $IMAGE:$VERSION $REGISTRY/$IMAGE:$VERSION'
+                sh 'docker push $REGISTRY/$IMAGE:$VERSION'
+
             }
         }
         stage('notification') {
