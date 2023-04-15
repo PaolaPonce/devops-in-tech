@@ -30,7 +30,7 @@ En las clases vimos: Intro DevOps, Git, Docker, Kubernetes, CI/CD, Jenkins, Gith
 La empresa **ZERO Technology**, solicita al Equipo de DevOps Trainer SuperPower 🚀 migrar alguno de sus dos proyectos:
 Las opciones presentadas de los dos proyectos: 
 - [final-bootcampdevops-ninja-v1](./final-bootcampdevops-ninja-v1/Readme.md)
-- [final-bootcampdevops-ninja-v2](/final-bootcampdevops-ninja-v2/Readme.md)
+
 
 Los proyectos estan formados por servicios (**frontend** y **backends**) el requerimiento apunta a desplegarlo en un cluster de Kubernetes. 
 
