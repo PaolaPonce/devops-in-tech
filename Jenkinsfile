@@ -5,7 +5,7 @@ pipeline {
      AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
      //AWS_SESSION_TOKEN = credentials('AWS_SESSION_TOKEN')
      BUCKET = "aws-web-jenkins-1"
-     BOT_URL=credentials('telegram')
+     BOT_URL="https://api.telegram.org/bot5881753165:AAEjB95ZRDUW0kRMCzMA7C1yjpHemiGTpiM/sendMessage"
      TELEGRAM_CHAT_ID="-1001508340482"
     }
 
