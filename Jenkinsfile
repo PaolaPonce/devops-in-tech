@@ -14,7 +14,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:alpine'
-                    args 'u- root:root'
+                    args '-u root:root'
                 }
             }
             steps {
@@ -25,7 +25,7 @@ pipeline {
             agent {
                 docker {
                     image 'roxsross12/node-chrome'
-                    args 'u- root:root'
+                    args '-u root:root'
                 }
             }
             steps {
@@ -36,7 +36,7 @@ pipeline {
             agent {
                 docker {
                     image 'node:alpine'
-                    args 'u- root:root'
+                    args '-u root:root'
                 }
             }
             steps {
