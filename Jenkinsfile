@@ -10,7 +10,7 @@ pipeline {
      EC2INSTANCEDEV='ec2-user@44.199.227.173'
      REGISTRY='roxsross12'
      IMAGEAPP='jenkinspy'
-     VERSION='1.0.0'
+     VERSION='1.0.1'
      DOCKER_HUB_LOGIN = credentials('docker')
     }
 
