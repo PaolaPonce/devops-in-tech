@@ -25,16 +25,10 @@ pipeline {
                 sh 'aws s3 ls s3://$BUCKET'
             }
         }
+        stage('notificacion Telegram') {
+            steps {
+                sh "curl -s -X POST $BOT_URL -d chat_id=$TELEGRAM_CHAT_ID -d parse_mode=markdown -d text='*Full project name*:  \n*Branch*: \n*Build* : [OK])'"
+            }
+        }
     } //end stages
-    post {
-        always {
-            cleanWs()
-        }
-        success {
-            sh "curl -s -X POST $BOT_URL -d chat_id=$TELEGRAM_CHAT_ID -d parse_mode=markdown -d text='*Full project name*:  \n*Branch*: \n*Build* : [OK])'"
-        }
-         failure {
-            sh "curl -s -X POST $BOT_URL -d chat_id=$TELEGRAM_CHAT_ID -d parse_mode=markdown -d text='*Full project name*:  \n*Branch*: \n*Build* : [Not OK]'"
-         }
-    }//post
 } //end pipeline
