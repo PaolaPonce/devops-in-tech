@@ -13,7 +13,7 @@ pipeline {
         stage('Init') {
             agent {
                 docker {
-                    image 'node:alpine'
+                    image 'node:erbium-alpine'
                     args '-u root:root'
                 }
             }
@@ -35,7 +35,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image 'node:alpine'
+                    image 'node:erbium-alpine'
                     args '-u root:root'
                 }
             }
