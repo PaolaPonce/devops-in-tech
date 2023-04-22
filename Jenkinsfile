@@ -17,7 +17,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t $REGISTRY/$IMAGEAPP:$VERSION'
+                sh 'docker build -t $REGISTRY/$IMAGEAPP:$VERSION .'
                 sh 'docker images |grep jenkins'
             }
         }
