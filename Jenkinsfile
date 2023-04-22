@@ -7,6 +7,7 @@ pipeline {
      BUCKET = "aws-web-jenkins-1"
      BOT_URL="https://api.telegram.org/bot5881753165:AAEjB95ZRDUW0kRMCzMA7C1yjpHemiGTpiM/sendMessage"
      TELEGRAM_CHAT_ID="-1001508340482"
+     BUILD_URL="1.0.0"
     }
 
     stages {
